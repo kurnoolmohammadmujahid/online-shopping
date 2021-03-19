@@ -1,0 +1,44 @@
+<app-header></app-header>
+<app-loader *ngIf="loading"></app-loader>
+<div class="container view-product">
+    <div class="row">
+        <div class="col-sm">
+            <div class="card">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="{{product.image}}" class="card-img">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{product.title}}</h5>
+                            <p>{{product.price | currency:"INR":"symbol"}}</p>
+                            <p style="font-weight: bold;">Size</p>
+                            <select class="custom-select" [(ngModel)]="size" id="inputGroupSelect01">
+                                <option value="Small">Small</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Large">Large</option>
+                            </select>
+                            <p style="font-weight: bold;margin-top: 5px;">Quantity</p>
+                            <select class="custom-select" [(ngModel)]="quantity" id="inputGroupSelect01">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                            <p style="font-weight: bold;margin-top: 5px;">Description</p>
+                            <p id="Description"></p>
+                            <button pButton pRipple type="button" label="ADD TO CART"
+                                class="p-button-outlined p-button-secondary" (click)="cartCount()"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+<app-header></app-header>
+<app-loader *ngIf="loading"></app-loader>
+
+<div class="container" style="text-align: center;">
+    <div class="row">
+        <div class="col adjust">
+            Your Cart<br /> ({{cartDetails.length}} Items)
+
+        </div>
+    </div>
+    <div class="row" *ngFor="let cartItem of cartDetails" style="padding: 20px;">
+        <!-- <div class="col-xl-3 col-lg-3 col-md-3 col-sm-2" *ngFor="let product of products" style="padding: 20px;"> -->
+        <!-- <div class="col" *ngFor="let cartItem of cartDetails" style="padding: 20px;"> -->
+        <div class="col adjust">
+            <img src="{{cartItem.item.image}}" class="card-img-top" alt="...">
+        </div>
+        <div class="col adjust">
+            {{cartItem.item.title}}
+        </div>
+        <div class="col adjust">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">Qty</div>
+                </div>
+                <select class="custom-select" [(ngModel)]="cartItem.quantity" (change)="cartItemQtyChanged(cartItem)"
+                    id="inputGroupSelect01">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+        </div>
+        <div class="col adjust">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">Size</div>
+                </div>
+                <select class="custom-select" [(ngModel)]="cartItem.size" (change)="cartItemQtyChanged(cartItem)"
+                    id="inputGroupSelect01">
+                    <option value="Small">S</option>
+                    <option value="Medium">M</option>
+                    <option value="Large">L</option>
+                </select>
+            </div>
+        </div>
+        <div class="col adjust">
+            {{cartItem.item.price | currency:"INR":"symbol"}}
+        </div>
+        <div class="col adjust">
+            {{cartItem.quantity | MultipliedAmount: cartItem.item.price | currency:"INR":"symbol"}}
+        </div>
+        <div class="col adjust">
+            <i class="pi pi-times" style="font-size: 1.5rem" (click)="delete(cartItem)"></i>
+        </div>
+    </div>
+    <div class="row total-amount">
+        <div class="col adjust">
+            Total: {{totalAmount | TotalAmount | currency:"INR":"symbol"}}
+        </div>
+    </div>
+</div>

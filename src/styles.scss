@@ -1,0 +1,60 @@
+body{
+    padding: 0 139px;
+}
+
+.card-width{
+    width: 18rem;
+}
+
+
+@media (min-width: 993px) and (max-width: 1200px) {
+    body{
+        padding: 0 139px;
+    }
+    
+    .card-width{
+        width: 12rem;
+    }
+    
+}
+@media (min-width: 769px) and (max-width: 992px) {
+    body{
+        padding: 0 100px;
+    }
+    
+    .card-width{
+        width: 10rem;
+    }
+}
+@media (min-width: 578px) and (max-width: 768px) {
+    body{
+        padding: 0;
+    }
+    
+    .card-width{
+        width: 10rem;
+    }
+}
+@media (max-width: 576px) {
+    body{
+        padding: 0;
+    }
+    
+    .card-width{
+        width: 10rem;
+    }
+}
+
+.p-badge {
+    background: #212539;
+}
+
+.spinner-class{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #ccc;
+}

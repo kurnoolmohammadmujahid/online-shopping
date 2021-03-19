@@ -1,0 +1,22 @@
+<div class="d-flex bd-highlight main-header" style="font-size: 2rem">
+    <div *ngIf="backButtonOn" class="p-2 flex-shrink-1 bd-highlight" style="line-height: 1.3;">
+        <i class="pi pi-arrow-left" style="font-size: 1.5rem" (click)="back()"></i>
+    </div>
+    <div class="p-2 w-100 bd-highlight" style="text-align: center;" (click)="shop()" i18n="@@headerTitle">
+        <!-- SHOP {{enableBack}} -->
+        <!-- {{title | uppercase }} -->
+        SHOP
+    </div>
+    <div class="p-2 flex-shrink-1 bd-highlight" style="line-height: 1.3;">
+        <!-- <div class="dropdown">
+            <button class="dropbtn">Language</button>
+            <div class="dropdown-content">
+                <a href="\">English</a>
+                <a href="\hi">Hindi</a>
+                <a href="\ta">Tamil</a>
+            </div>
+        </div> -->
+        <i class="pi pi-shopping-cart" pBadge value="{{cartValue}}" (click)="viewCartList()"
+            style="font-size: 1.5rem"></i>
+    </div>
+</div>
